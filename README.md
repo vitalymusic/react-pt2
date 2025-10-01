@@ -1,76 +1,92 @@
-# Projekta startēšana #
-    npm i
+
+# React-pt2
+
+Vienkāršs React projekts, kas demonstrē komponentu struktūru un darbu ar React lietotni.
+
+## 🚀 Sākšana (Getting Started)
+
+### 1. Klonēt repozitoriju
 
 
-# Getting Started with Create React App
+git clone https://github.com/vitalymusic/react-pt2.git
+cd react-pt2
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 2. Instalēt atkarības
 
-## Available Scripts
+Projekts izmanto npm (vai yarn). Izvēlies vienu no variantiem:
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+npm install
 
 
+
+##  3. Palaist izstrādes serveri
+npm start
+
+
+Pēc tam atver pārlūkā http://localhost:3000, lai redzētu savu React lietotni darbībā.
+
+##  📂 Projekta struktūra
+react-pt2/
+ ├── public/
+ │    └── index.html        ← Galvenais HTML fails
+ ├── src/
+ │    ├── components/       ← React komponentes
+ │    ├── App.js            ← Saknes (root) komponente
+ │    ├── index.js          ← Ieejas punkts aplikācijai
+ │    └── styles/           ← CSS vai citi stilu faili
+ ├── package.json           ← Atkarības un skripti
+ └── README.md              ← Pamācība (šis fails)
+
+
+## 🧩 Kā izveidot jaunu komponenti
+
+Izveido src/components/ mapē jaunu failu, piemēram: MyComponent.js
+
+export default function MyComponent() {
+  return <p>Šī ir mana komponente!</p>;
+}
+
+
+## Importē komponenti App.js failā:
+
+import MyComponent from './components/MyComponent';
+
+
+## Pievieno to JSX iekš App.js:
+
+function App() {
+  return (
+    <div>
+      <h1>Mana React aplikācija</h1>
+      <MyComponent />
+    </div>
+  );
+}
+
+🎨 Stilu pievienošana
+
+Ja vēlies pievienot CSS stilus, izveido failu MyComponent.css un importē to komponentē:
+
+p {
+  color: blue;
+  font-weight: bold;
+}
+
+import './MyComponent.css';
+
+## 📦 Ražošanas (production) build
+
+Kad projekts gatavs, izveido optimizētu versiju publicēšanai:
+
+npm run build
+
+
+Tiks izveidota mape build/, kuru var izvietot jebkurā hostinga platformā (piem., Netlify, Vercel, GitHub Pages).
+
+## ✅ Ieteikumi
+
+Koda formatēšanai vari izmantot Prettier vai ESLint.
+
+Ja nepieciešami testi, tos var palaist ar npm test vai yarn test.
+
+Publicēšanai vari izmantot Netlify, Vercel vai GitHub Pages.
