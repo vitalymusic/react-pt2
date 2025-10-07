@@ -6,14 +6,31 @@ export default function Footer() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-
+   const [formSubmitted, setFormSubmitted] = useState(false);
 
 
   function submit(e){
       e.preventDefault();
+      fetch('save_user.php',{
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+        body:JSON.stringify({
+          name:{name},
+          email:{email},
+          message:{message},
+        })
+      })
+        .then((resp)=> {return resp.json()} )
+        .then((resp)=>{
+          setFormSubmitted(true);
+        }) 
+        .catch((error) => {
+        console.error('Error:', error);
+    });
 
-      console.log(name,email,message);
-
+      // console.log(name,email,message);
   }
 
   return (
@@ -39,6 +56,9 @@ export default function Footer() {
         value="Nosūtīt"
         />
       </form>
+      {formSubmitted&&
+        <div>Success</div>
+      }
 
     </footer>
   )
