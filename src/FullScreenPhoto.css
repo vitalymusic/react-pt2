@@ -1,0 +1,13 @@
+.fullScreen{
+    position: fixed;
+    top:50px;
+    
+    width: 50%;
+    height: 50%;
+    background-color: #000000;
+    z-index: 10;
+    img{
+        height: 100%;
+
+    }
+}
