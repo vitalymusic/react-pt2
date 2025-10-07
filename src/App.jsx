@@ -20,6 +20,11 @@ function App() {
 }
 
 
+  function closeCard(){
+      setVisible(false);
+  }
+
+
 
   return (
     <div className="App">
@@ -40,7 +45,7 @@ function App() {
       </div>
 
       {visible&&
-              <FullScreenPhoto src={src} />
+              <FullScreenPhoto src={src} closeCard={closeCard}/>
        }
       <Footer />
     </div>
