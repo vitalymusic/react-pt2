@@ -5,12 +5,10 @@ import { useState } from "react";
 export default function Card(props) {
 
   const [visible, setVisible] = useState(false);
-  
+
   function openCard(){
     setVisible(!visible);
 }
-
-
 
   return (
     <div className="card" onClick={openCard}>
