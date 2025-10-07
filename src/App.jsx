@@ -4,6 +4,7 @@ import Footer from './Footer';
 import Card from './Card';
 import { useState } from "react";
 import FullScreenPhoto from './FullScreenPhoto';
+import Slider from './Slider';
 
 
 import './App.css';
@@ -29,6 +30,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <Slider />
       <h1 className='title'>Hello React</h1>
       <p className='text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero quo error amet officiis, similique, eos nostrum, repellat in hic eveniet minima voluptatem? Tempore libero explicabo ab sequi ad ipsam temporibus.</p>
       {/* <img className="image" src="https://picsum.photos/200/300" alt="picsum" /> */}
