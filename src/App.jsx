@@ -13,8 +13,9 @@ function App() {
   const [visible, setVisible] = useState(false);
   const [src, setSrc] = useState("");
 
-  function openCard(el){
-    setSrc(el.src);
+  function openCard(e){
+    // console.log(e);
+    setSrc(e.target.src);
     setVisible(!visible);
 }
 
@@ -27,15 +28,15 @@ function App() {
       <p className='text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero quo error amet officiis, similique, eos nostrum, repellat in hic eveniet minima voluptatem? Tempore libero explicabo ab sequi ad ipsam temporibus.</p>
       {/* <img className="image" src="https://picsum.photos/200/300" alt="picsum" /> */}
       <div className="cards flex">
-        <Card src="https://picsum.photos/id/5/200/300" title="Bilde 1" onClick={openCard(this)} />
-        <Card src="https://picsum.photos/id/9/200/300" title="Bilde 2" onClick={openCard(this)}/>
-        <Card src="https://picsum.photos/id/10/200/300" title="Bilde 3" onClick={openCard(this)}/>
-        <Card src="https://picsum.photos/id/20/200/300" title="Bilde 4" onClick={openCard(this)}/>
-        <Card src="https://picsum.photos/id/20/200/300" title="Bilde 4" onClick={openCard(this)}/>
-        <Card src="https://picsum.photos/id/20/200/300" title="Bilde 4" onClick={openCard(this)}/>
-        <Card src="https://picsum.photos/id/20/200/300" title="Bilde 4" onClick={openCard(this)}/>
-        <Card src="https://picsum.photos/id/20/200/300" title="Bilde 4" onClick={openCard(this)}/>
-        <Card src="https://picsum.photos/id/20/200/300" title="Bilde 4" onClick={openCard(this)}/>
+        <Card src="https://picsum.photos/id/5/200/300" title="Bilde 1" onClick={openCard} />
+        <Card src="https://picsum.photos/id/9/200/300" title="Bilde 2" onClick={openCard}/>
+        <Card src="https://picsum.photos/id/10/200/300" title="Bilde 3" onClick={openCard}/>
+        <Card src="https://picsum.photos/id/20/200/300" title="Bilde 4" onClick={openCard}/>
+        <Card src="https://picsum.photos/id/20/200/300" title="Bilde 4" onClick={openCard}/>
+        <Card src="https://picsum.photos/id/20/200/300" title="Bilde 4" onClick={openCard}/>
+        <Card src="https://picsum.photos/id/20/200/300" title="Bilde 4" onClick={openCard}/>
+        <Card src="https://picsum.photos/id/20/200/300" title="Bilde 4" onClick={openCard}/>
+        <Card src="https://picsum.photos/id/20/200/300" title="Bilde 4" onClick={openCard}/>
       </div>
 
       {visible&&
